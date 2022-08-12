@@ -30,14 +30,11 @@ public class CardNumberMaskingPatternLayout extends PatternLayout {
 
                 Matcher matcher = pattern.matcher(message);
                 if (matcher.find()) {
-                    int startPosition = matcher.start();
-                    message = message.replaceAll(message.substring(startPosition + 15, startPosition + 19), "****");
-
+                    message = matcher.replaceAll("****");
                 }
             }
         }
 
         return message;
     }
-
 }

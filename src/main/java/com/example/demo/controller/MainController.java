@@ -14,7 +14,7 @@ public class MainController {
 
     @GetMapping
     public String main() {
-        LOGGER.info("Card number: 9999 9999 9999 9999");
+        LOGGER.info("Card number: 4255 1901 2775 9952");
         return "index";
     }
 }
