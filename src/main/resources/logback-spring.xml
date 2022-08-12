@@ -1,0 +1,13 @@
+<configuration>
+    <appender name="consoleAppender1" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <layout class="com.example.demo.configuration.CardNumberMaskingPatternLayout">
+                <patternsProperty>(([0-9]{4}\s){3})[0-9]{4}</patternsProperty>
+                <pattern>%d [%thread] %-5level %logger{35} - %msg%n</pattern>
+            </layout>
+        </encoder>
+    </appender>
+    <root level="INFO">
+        <appender-ref ref="consoleAppender1"/>
+    </root>
+</configuration>

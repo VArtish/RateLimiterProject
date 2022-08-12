@@ -18,7 +18,7 @@ public class RateLimiterHandler implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        if (!bucket.tryConsume(100)) {
+        if (!bucket.tryConsume(1)) {
             throw new RateLimiterException("Requests per minute exceeded");
         }
 

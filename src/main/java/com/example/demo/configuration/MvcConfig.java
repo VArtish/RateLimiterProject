@@ -30,8 +30,8 @@ public class MvcConfig implements WebMvcConfigurer {
 
     @Bean
     public Bucket bucket() {
-        Refill refill = Refill.intervally(2, Duration.ofMinutes(1));
-        Bandwidth limit = Bandwidth.classic(2, refill);
+        Refill refill = Refill.intervally(100, Duration.ofMinutes(1));
+        Bandwidth limit = Bandwidth.classic(100, refill);
         Bucket bucket = Bucket4j.builder()
                 .addLimit(limit)
                 .build();
